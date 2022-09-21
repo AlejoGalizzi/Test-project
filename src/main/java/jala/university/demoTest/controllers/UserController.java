@@ -3,6 +3,7 @@ package jala.university.demoTest.controllers;
 import jala.university.demoTest.entities.User;
 import jala.university.demoTest.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody @Valid User user) {
-        return ResponseEntity.ok().body(userService.saveUser(user));
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.saveUser(user));
     }
 
     @GetMapping(value="/{id}")

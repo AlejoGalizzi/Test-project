@@ -20,13 +20,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class testController {
+public class ControllerTest {
 
     @Autowired
-    public MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @MockBean
-    public UserService userService;
+    private UserService userService;
 
     @Test
     public void mustGetAllUsers() throws Exception {
